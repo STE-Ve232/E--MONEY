@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion"; // This import is used for the animation
 import { Link, useNavigate } from "react-router-dom";
 import { RxDashboard } from "react-icons/rx";
-import { login } from "/src/lib/api";
+import { login } from "@/lib/api";
 
 export default function Login() {
   const [email, setEmail] = useState("");

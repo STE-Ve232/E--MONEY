@@ -15,5 +15,7 @@
     "dataworkspace.excludedProjects": [
         "backend/venv/client/client.sqlproj",
         "backend/internal/db/E-money/E-money.sqlproj"
-    ]
+    ],
+    "git.ignoreLimitWarning": true,
+    "postman.settings.dotenv-detection-notification-visibility": false
 }

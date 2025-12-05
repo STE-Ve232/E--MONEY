@@ -1,0 +1,10 @@
+venv
+node_modules
+npm-debug.log
+*.log
+.env
+.env.local
+.git
+.gitignore
+README.md
+welcome-to-docker

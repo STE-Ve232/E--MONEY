@@ -130,7 +130,7 @@ const AppLayout = () => {
           <span className="font-semibold text-green-500">99.998% Fraud Detection</span>
         </div>
 
-        <h2 className="text-6xl md:text-7xl font-black leading-tight mb-6">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
           <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text animate-pulse text-[#be3bf5]">
             The Future of
           </span>
@@ -145,16 +145,24 @@ const AppLayout = () => {
           giving you <span className="text-purple-400 font-bold">absolute control</span> and peace of mind.
         </p>
 
-        <div className="flex justify-center gap-6 flex-wrap">
-          <button onClick={handleCreateAccount} className="group px-10 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-full text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-purple-500/50 relative overflow-hidden">
+        <div className="flex justify-center gap-4 md:gap-6 flex-wrap">
+          <button onClick={() => navigate('/services')} className="group px-6 md:px-10 py-3 md:py-4 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 text-white font-bold rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-gray-500/50 relative overflow-hidden border-2 border-gray-500 hover:border-cyan-400">
             <span className="relative z-10 flex items-center gap-2">
-              <Zap className="w-5 h-5 group-hover:animate-bounce" />
+              <Zap className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
+              Press to Continue
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </button>
+
+          <button onClick={handleCreateAccount} className="group px-6 md:px-10 py-3 md:py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-110 shadow-2xl shadow-purple-500/50 relative overflow-hidden">
+            <span className="relative z-10 flex items-center gap-2">
+              <Zap className="w-4 h-4 md:w-5 md:h-5 group-hover:animate-bounce" />
               Create Free Account
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
-          <button onClick={handleSignIn} className="px-10 py-4 border-2 border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black font-bold rounded-full text-lg transition-all duration-300 transform hover:scale-110 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/60">
+          <button onClick={handleSignIn} className="px-6 md:px-10 py-3 md:py-4 border-2 border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-black font-bold rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-110 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/60">
             Sign In
           </button>
         </div>

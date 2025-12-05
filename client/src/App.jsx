@@ -11,6 +11,7 @@ import UserLayout from './components/UserLayout';
 import Deposit from './pages/Deposit';
 import TransactionHistory from './pages/TransactionHistory';
 import LandingPage from './pages/LandingPage';
+import Services from './pages/Services.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 
 
@@ -20,6 +21,7 @@ export default function App() {
       {/* Public Routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/" element={<LandingPage />} />
 
       {/* Protected Routes */}

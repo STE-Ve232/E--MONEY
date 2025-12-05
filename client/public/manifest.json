@@ -1,0 +1,17 @@
+{
+  "name": "EMoney - Secure E-Money Platform",
+  "short_name": "EMoney",
+  "description": "A worldwide financial platform engineered for military-grade security",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00D9FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

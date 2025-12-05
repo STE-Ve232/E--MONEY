@@ -1,41 +1,37 @@
-version: '3.8'
 services:
   postgres:
     image: postgres:15
+    restart: always
     environment:
-      POSTGRES_DB: emoney
-      POSTGRES_USER: emc
-      POSTGRES_PASSWORD: emcpass
+      POSTGRES_USER: emoney_app
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: emoney_db
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
-  redis:
-    image: redis:7
-    ports:
-      - "6379:6379"
-
   backend:
-    build: .
-    env_file:
-      - ./backend/.env
+    build: ./backend
     depends_on:
       - postgres
-      - redis
+    environment:
+      DATABASE_URL: postgresql://emoney_app:yourpassword@postgres:5432/emoney_db
+      JWT_SECRET: replace_with_production_jwt_secret
+      ADMIN_DEFAULT_PASS: TI6IX9INE
+      PORT: 4000
     ports:
-      - "5000:5000"
-    volumes:
-      - ./backend:/app
+      - "4000:4000"
+    command: ["node", "src/server.js"]
 
-  celery:
-    build: .
-    command: celery -A tasks.celery_app.celery worker --loglevel=info
-    env_file:
-      - ./backend/.env
+  admin:
+    build: ./admin
     depends_on:
-      - redis
-      - postgres
+      - backend
+    ports:
+      - "5173:80"
 
 volumes:
   pgdata:
+# This docker-compose file sets up a multi-container application with PostgreSQL as the database,
+# a backend service, and an admin interface. Adjust environment variables and ports as needed.
