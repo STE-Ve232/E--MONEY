@@ -1,0 +1,10 @@
+VITE_API_URL=http://localhost:5000
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_PAYOUT_WEBHOOK_PATH=/api/payouts/webhook
+REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_PAYOUT_WEBHOOK_PATH=/api/payouts/webhook
+REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_PAYOUT_WEBHOOK_PATH=/api/payouts/webhook
+REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_PAYOUT_WEBHOOK_PATH=/api/payouts/webhook

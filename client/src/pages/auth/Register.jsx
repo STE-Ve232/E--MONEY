@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { RxDashboard } from 'react-icons/rx';
+
+export default function Register() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    if (name && email && password) {
+      console.log('Simulating registration for:', email);
+      navigate('/login?registered=true');
+    } else {
+      setError('Please fill out all fields.');
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-200 font-sans" style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+      <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md p-8 space-y-8 bg-black/40 backdrop-blur-xl border border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10">
+        <div className="text-center">
+          <Link to="/" className="flex justify-center items-center gap-3 mb-4">
+            <RxDashboard className="text-4xl text-blue-400" />
+            <h1 className="text-3xl font-bold tracking-wider text-white">EMoney</h1>
+          </Link>
+          <h2 className="text-2xl font-bold text-cyan-300">Create Your Secure Account</h2>
+        </div>
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} required className="w-full bg-white/5 border border-white/20 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+            <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full bg-white/5 border border-white/20 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">Password</label>
+            <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full bg-white/5 border border-white/20 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+          </div>
+          {error && <p className="text-sm text-red-500 text-center">{error}</p>}
+          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors text-lg">
+            Create Account
+          </button>
+        </form>
+        <p className="text-center text-sm text-gray-400">
+          Already have an account?{' '}
+          <Link to="/login" className="font-medium text-cyan-400 hover:text-cyan-300">Sign In</Link>
+        </p>
+      </motion.div>
+    </div>
+  );
+}

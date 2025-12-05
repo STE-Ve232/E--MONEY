@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionMethod": "Hostname and Token",
+            "catalog": "hive_metastore",
+            "previewLimit": 50,
+            "driver": "Databricks",
+            "name": "Databricks Warehouse",
+            "group": "Analytics Team",
+            "path": "/sql/1.0/endpoints/1234abcd",
+            "host": "foo.cloud.databricks.com",
+            "schema": "default"
+        }
+    ],
+    "dataworkspace.excludedProjects": [
+        "backend/venv/client/client.sqlproj",
+        "backend/internal/db/E-money/E-money.sqlproj"
+    ]
+}
