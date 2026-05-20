@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+  --text-color: #333;
+  --border-radius: 8px;
+  --shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+body { 
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+.app-container { display: flex; height: 100vh; }
+
+/* --- Sidebar --- */
+.sidebar { width: 240px; background-color: var(--dark-color); color: white; display: flex; flex-direction: column; }
+.sidebar-header { padding: 1.5rem; text-align: center; border-bottom: 1px solid #444; }
+.logo { font-size: 1.8rem; font-weight: 700; }
+.sidebar-menu { list-style: none; padding: 0; margin: 1rem 0; }
+.sidebar-menu li a { display: block; padding: 1rem 1.5rem; color: white; text-decoration: none; transition: background-color 0.3s ease; border-left: 3px solid transparent; }
+.sidebar-menu li a:hover { background-color: #495057; }
+.sidebar-menu li a.active { background-color: var(--primary-color); border-left: 3px solid var(--warning-color); }
+
+/* --- Main Content --- */
+.main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background-color: white; border-bottom: 1px solid #e9ecef; }
+.balance-display h2 { margin: 0; font-size: 1rem; color: var(--secondary-color); font-weight: 400; }
+.balance-amount { font-size: 2.2rem; font-weight: 700; color: var(--dark-color); }
+.content-area { padding: 2rem; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.header h2 { margin: 0; font-size: 2rem; font-weight: 700; }
+
+/* --- Buttons & Forms --- */
+.btn-primary { background-color: var(--primary-color); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: var(--border-radius); cursor: pointer; font-size: 1rem; font-weight: 500; transition: all 0.3s ease; }
+.btn-primary:hover { background-color: #0056b3; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+.form-container { max-width: 600px; background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+/* --- My Banks Tab --- */
+.bank-accounts-list { display: grid; gap: 1.5rem; }
+.bank-account-card { background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; transition: box-shadow 0.3s ease; }
+.bank-account-card:hover { box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.bank-details .bank-name { font-size: 1.2rem; font-weight: 500; }
+.bank-details .account-number { color: var(--secondary-color); font-size: 0.9rem; }
+.bank-balance span { font-size: 1.5rem; font-weight: 700; }
+.remove-btn { background: none; border: none; color: var(--danger-color); cursor: pointer; font-size: 1rem; }
+
+/* --- Transactions Tab --- */
+.filters { display: flex; gap: 0.5rem; }
+.filter-btn { background-color: #e9ecef; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; }
+.filter-btn.active, .filter-btn:hover { background-color: var(--primary-color); color: white; }
+
+.transaction-list table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+.transaction-list th { text-align: left; padding: 0 1rem; color: var(--secondary-color); font-weight: 500; }
+.transaction-row { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-radius: var(--border-radius); transition: box-shadow 0.2s; }
+.transaction-row:hover { box-shadow: var(--shadow); }
+.transaction-list td { padding: 1.25rem 1rem; vertical-align: middle; }
+.transaction-list td:first-child { border-top-left-radius: var(--border-radius); border-bottom-left-radius: var(--border-radius); }
+.transaction-list td:last-child { text-align: right; border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); }
+
+.description { font-weight: 500; }
+.category { font-size: 0.9rem; color: var(--secondary-color); }
+.amount.income { color: var(--success-color); font-weight: 700; }
+.amount.expense { color: var(--text-color); font-weight: 500; }
+
+.status-badge { padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; color: white; text-transform: capitalize; }
+.status-completed { background-color: var(--success-color); }
+.status-pending { background-color: var(--warning-color); }
+.status-failed { background-color: var(--danger-color); }
+
+/* --- My Cards Tab --- */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.virtual-card { color: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; position: relative; overflow: hidden; font-family: 'monospace'; }
+
+.card-network { font-size: 1.6rem; font-weight: 700; align-self: flex-end; z-index: 1; }
+.card-number { font-size: 1.5rem; letter-spacing: 3px; text-align: center; margin: 1.5rem 0; z-index: 1; }
+.card-details { display: flex; justify-content: space-between; font-size: 1rem; z-index: 1; }
+.card-details span { color: rgba(255,255,255,0.7); font-size: 0.8rem; display: block; margin-bottom: 2px; }
+
+/* Card Network Colors & Abstract Shapes */
+.virtual-card::before { content: ''; position: absolute; z-index: 0; border-radius: 50%; transition: all 0.4s ease;}
+.visa { background: linear-gradient(45deg, #1a237e, #283593); }
+.visa::before { width: 150px; height: 150px; background: #3f51b5; top: -20%; right: -25%; }
+.mastercard { background: linear-gradient(45deg, #1a1a1a, #303030); }
+.mastercard::before { width: 200px; height: 200px; background: linear-gradient(45deg, #eb001b, #f79e1b); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.amex { background: linear-gradient(45deg, #007bc1, #00a8e0); }
+.amex::before { width: 250px; height: 250px; background: rgba(255,255,255,0.1); top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(45deg); border-radius: 20px; }

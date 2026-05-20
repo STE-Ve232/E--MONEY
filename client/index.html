@@ -1,20 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#00D9FF" />
-    <meta name="description" content="A worldwide financial platform engineered for military-grade security" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="EMoney" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/vite.svg" />
-    <title>EMoney - Secure E-Money Platform</title>
+    <title>E-Money Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="app-container">
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <span class="logo">E-Money</span>
+        </div>
+        <ul class="sidebar-menu">
+          <li><a href="#" data-target="transactions">Transactions</a></li>
+          <li><a href="#" class="active" data-target="banks">My Banks</a></li>
+          <li><a href="#" data-target="cards">My Cards</a></li>
+          <li><a href="#" data-target="send">Send Money</a></li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <header class="main-header">
+          <div class="balance-display">
+            <h2>Total Balance</h2>
+            <span class="balance-amount">$0.00</span>
+          </div>
+          <div class="user-profile">
+            <span>Welcome!</span>
+          </div>
+        </header>
+        <div class="content-area">
+          <!-- Dynamic content will be injected here by script.js -->
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
